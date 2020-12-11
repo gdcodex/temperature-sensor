@@ -24,7 +24,6 @@ const getTemperatures = async (req, res, next) => {
       )
     );
   }
-  console.log(temperature);
   res.json({ temperature });
 };
 
