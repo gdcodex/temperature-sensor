@@ -1,0 +1,20 @@
+POST API(Sending data from sensors)-
+End point: http://localhost:5000/api/temperatures
+HEADER : Authorization Token(Bearer Token) 
+This is a dummy token - "kwyo07m02ndy3nx9nayzo11q"
+This can be used to post and retreive data.
+BODY: Body will contain three fields: temperature(Number), date(Date), and sensors(String)
+e.g: {
+    "temperature": "350.5",
+    "date":"11",
+    "sensor": "sensor3"
+} -->In JSON format
+
+
+
+GET API(Retreiving data from server)-
+End point: http://localhost:5000/api/temperatures
+HEADER : Authorization Token(Bearer Token) 
+Dummy token - "kwyo07m02ndy3nx9nayzo11q"
+query params: sensor(String),from(Date),to(Date)
+e.g.- http://localhost:5000/api/temperatures?sensor=sensor3&from=Fri, 11 Dec 2020 06:30:00 GMT&to=11 Dec 2020 12:30:00 GMT
