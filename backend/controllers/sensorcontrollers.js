@@ -37,7 +37,7 @@ const createTemperature = async (req, res, next) => {
   const { temperature, date, sensor } = req.body;
   const newTemperature = new Temperature({
     temperature,
-    date: date,
+    date,
     sensor,
   });
   try {

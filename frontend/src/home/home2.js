@@ -63,10 +63,14 @@ function Home() {
         seterror(error); // error handling
         console.log("error", error);
       });
-  },[]);
+  },[from,to]);
   React.useEffect(() => {
     http("sensor3");
-  }, [http]);
+  }, []);
+  React.useEffect(()=>{
+    console.log("from "+from.toUTCString());
+    console.log("to "+to.toUTCString())
+  },[from,to])
   return (
     <div className="home">
       <header>
