@@ -27,7 +27,7 @@ function Home() {
       ],
     });
   };
-  const http = (sensor) => {
+  const http =React.useCallback((sensor) => {
     setloading(true);
     seterror(false);
     setvalue(false)
@@ -53,8 +53,9 @@ function Home() {
         const labelArray = [];
         const dataArray = [];
         val.temperature.map((e, i) => {
-          labelArray.push(i);
+          labelArray.push(new Date(e.date).toLocaleTimeString());
           dataArray.push(e.temperature);
+          return 0;
         });
         chart(labelArray, dataArray);
       })
@@ -62,10 +63,10 @@ function Home() {
         seterror(error); // error handling
         console.log("error", error);
       });
-  };
+  },[]);
   React.useEffect(() => {
     http("sensor3");
-  }, []);
+  }, [http]);
   return (
     <div className="home">
       <header>
